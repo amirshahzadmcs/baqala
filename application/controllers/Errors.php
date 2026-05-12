@@ -6,6 +6,6 @@ class Errors extends CI_Controller {
     {
         // Show a 404 error page
         $this->output->set_status_header('404');
-        $this->load->view('errors/html/error_404');
+        $this->load->view('errors/html/error_404'); 
     }
 }
