@@ -30,6 +30,8 @@ Thumbs.db
 /images/
 /img/
 /store_assets/
+/assets/
+/admin_assets/
 
 # Backups / archives
 *.zip
