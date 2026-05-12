@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="368" height="251" viewBox="0 0 368 251">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="rectangle-51" width="368" height="251" stroke-width="1" fill="#fff" stroke="#95989a" transform="translate(449 118)"/>
+    </clipPath>
+  </defs>
+  <g id="Map_Horizontal" data-name="Map Horizontal" transform="translate(-449 -118)" clip-path="url(#clip-path)">
+    <g id="group-120" transform="translate(449 65.664)">
+      <g id="rectangle-50" transform="translate(0 52.336)" fill="#fafafa" stroke="#d5d7d8" stroke-width="1">
+        <rect width="368" height="251" stroke="none"/>
+        <rect x="0.5" y="0.5" width="367" height="250" fill="none"/>
+      </g>
+      <g id="group-118" transform="translate(57.802 0.783)">
+        <path id="path-14" d="M286.413,370.772V184.343H266.622V370.772H255.167V80.194H11.457V360.356H0V0H11.457V65.615h243.71v-55.2h11.455v55.2h15.623V80.194H266.622v96.86h19.791v-6.248h5.207V370.772ZM80.2,330.154V185.385h9.373v89.568h96.86v13.54H89.568v30.2h96.86v11.457Z" fill="#c3c3c3"/>
+        <text id="_12th_Avenue" data-name="12th Avenue" transform="translate(41.198 76.554)" fill="#95989a" font-size="8" font-family="ArialMT, Arial"><tspan x="0" y="0">Uncle tom street</tspan></text>
+      </g>
+      <rect id="rectangle-48" width="21" height="21" transform="translate(179 224.336)" fill="#f4f4f4"/>
+      <circle id="ellipse-12" cx="5.5" cy="5.5" r="5.5" transform="translate(243 200.336)" fill="#fff"/>
+      <g id="group-113" transform="translate(78.112 245.013)">
+        <rect id="rectangle-47" width="52" height="40" transform="translate(-0.112 0.324)" fill="#f4f4f4"/>
+        <text id="_12th_Avenue-2" data-name="12th Avenue" transform="translate(23.888 22.324)" fill="#b1b2b2" font-size="8" font-family="ArialMT, Arial"><tspan x="-17.785" y="0">Starbucks</tspan></text>
+      </g>
+      <g id="group-112" transform="translate(78.633 290.318)">
+        <path id="rectangle-47-2" data-name="rectangle-47" d="M.5.5H51.533V40.077L16.842,31.16Z" transform="translate(-0.5 -0.5)" fill="#f4f4f4"/>
+        <text id="_12th_Avenue-3" data-name="12th Avenue" transform="translate(29.367 20.019)" fill="#b1b2b2" font-size="8" font-family="ArialMT, Arial"><tspan x="-7.334" y="0">Muji</tspan></text>
+      </g>
+      <g id="group-117" transform="translate(262.456 229.491)">
+        <path id="path-16" d="M8138,540.743l17.761-18.647h27.4V661.9H8138Z" transform="translate(-8138 -522.096)" fill="#f4f4f4"/>
+        <text id="_12th_Avenue-4" data-name="12th Avenue" transform="translate(22.544 75.846)" fill="#b1b2b2" font-size="8" font-family="ArialMT, Arial"><tspan x="-10.154" y="0">Virgin</tspan><tspan x="-18.898" y="9">Megastore</tspan></text>
+      </g>
+      <g id="group-114" transform="translate(154.141 200.229)">
+        <rect id="rectangle-48-2" data-name="rectangle-48" width="21" height="21" transform="translate(-0.141 0.108)" fill="#f4f4f4"/>
+        <rect id="rectangle-48-3" data-name="rectangle-48" width="21" height="21" transform="translate(-0.141 24.108)" fill="#f4f4f4"/>
+        <rect id="rectangle-48-4" data-name="rectangle-48" width="21" height="21" transform="translate(-0.141 48.108)" fill="#f4f4f4"/>
+        <rect id="rectangle-48-5" data-name="rectangle-48" width="21" height="21" transform="translate(24.859 0.108)" fill="#f4f4f4"/>
+        <path id="path-15" d="M25,43.742H0V23.954H25V0H44.785V43.742Z" transform="translate(25.516 24.475)" fill="#f4f4f4"/>
+        <text id="_12th_Avenue-5" data-name="12th Avenue" transform="translate(29.859 33.108)" fill="#b1b2b2" font-size="8" font-family="ArialMT, Arial"><tspan x="-16.676" y="0">Flipboard</tspan><tspan x="-12.67" y="9">Towers</tspan></text>
+      </g>
+      <g id="group-111" transform="translate(77.591 89.309)">
+        <path id="rectangle-45" d="M.5.5H153.6s.63,35.824.122,55.108-13.235,25.535-34,26.342C74.972,83.689.5,81.95.5,81.95Z" transform="translate(-0.5 -0.5)" fill="#f4f4f4"/>
+        <path id="rectangle-45-2" data-name="rectangle-45" d="M.5.5H112.71s.462,26.257.089,40.39S103.1,59.605,87.88,60.2C55.082,61.471.5,60.2.5,60.2Z" transform="translate(7.468 3.77)" fill="#ebebeb"/>
+        <rect id="rectangle-46" width="56" height="35" transform="translate(12.409 9.027)" fill="#dbdbdb"/>
+        <text id="_12th_Avenue-6" data-name="12th Avenue" transform="translate(99.409 43.027)" fill="#b1b2b2" font-size="8" font-family="ArialMT, Arial"><tspan x="-19.563" y="0">Tony Hawk</tspan><tspan x="-17.342" y="9">skatepark</tspan></text>
+      </g>
+      <g id="group-116" transform="translate(262.456 89.83)">
+        <rect id="rectangle-49" width="45" height="74" transform="translate(-0.456 -0.494)" fill="#f4f4f4"/>
+        <circle id="ellipse-11" cx="6.5" cy="6.5" r="6.5" transform="translate(2.544 81.506)" fill="#f4f4f4"/>
+        <circle id="ellipse-11-2" data-name="ellipse-11" cx="6.5" cy="6.5" r="6.5" transform="translate(31.544 81.506)" fill="#f4f4f4"/>
+        <ellipse id="ellipse-11-3" data-name="ellipse-11" cx="7" cy="6.5" rx="7" ry="6.5" transform="translate(17.544 101.506)" fill="#f4f4f4"/>
+        <text id="_12th_Avenue-7" data-name="12th Avenue" transform="translate(22.544 61.506)" fill="#b1b2b2" font-size="8" font-family="ArialMT, Arial"><tspan x="-8.891" y="0">Pillar</tspan></text>
+      </g>
+      <g id="group-119" transform="translate(0.046)">
+        <path id="path-12" d="M7886.045,480.944h193.9s44.169.408,44.169-37.331V301.749h17.137v179.2c0,6.73.874,32.029,32.029,32.029h79.245v10.578H8173.28s-32.029-2-32.029,32.029v89.259h-17.137V529.023s1.953-34.05-44.169-34.05h-193.9Z" transform="translate(-7886.045 -301.749)" fill="#e8e8e8" stroke="#ccc" stroke-width="1"/>
+        <text id="_12th_Avenue-8" data-name="12th Avenue" transform="translate(82.954 188.336)" fill="#95989a" font-size="8" font-family="ArialMT, Arial"><tspan x="0" y="0">12th Avenue</tspan></text>
+        <text id="_12th_Avenue-9" data-name="12th Avenue" transform="translate(293.954 219.336)" fill="#95989a" font-size="8" font-family="ArialMT, Arial"><tspan x="0" y="0">13th Avenue</tspan></text>
+        <text id="_12th_Avenue-10" data-name="12th Avenue" transform="translate(245.474 250.741) rotate(90)" fill="#95989a" font-size="8" font-family="ArialMT, Arial"><tspan x="0" y="0">14th Avenue</tspan></text>
+        <text id="_12th_Avenue-11" data-name="12th Avenue" transform="translate(245.474 42.442) rotate(90)" fill="#95989a" font-size="8" font-family="ArialMT, Arial"><tspan x="0" y="0">15th Avenue</tspan></text>
+        <text id="_12th_Avenue-12" data-name="12th Avenue" transform="translate(241.954 183.336)" fill="#95989a" font-size="8" font-family="ArialMT, Arial"><tspan x="-16.895" y="0">American</tspan><tspan x="-14.898" y="9">Junction</tspan></text>
+        <text id="_12th_Avenue-13" data-name="12th Avenue" transform="translate(353.79 249.699) rotate(90)" fill="#b1b2b2" font-size="8" font-family="ArialMT, Arial"><tspan x="0" y="0">Chubmash</tspan></text>
+      </g>
+      <g id="group-110" transform="translate(178.095 165.108)">
+        <path id="ellipse-13" d="M7.27.5a6.77,6.77,0,0,1,6.77,6.77c0,3.739-6.614,14.447-6.77,14.292S.5,11.009.5,7.27A6.77,6.77,0,0,1,7.27.5Z" transform="translate(-0.5 -0.5)" fill="#4b4b4b"/>
+        <circle id="ellipse-14" cx="3.761" cy="3.761" r="3.761" transform="translate(3.009 2.633)" fill="#fff"/>
+      </g>
+      <g id="group-115" transform="translate(78.112 200.229)">
+        <rect id="rectangle-47-3" data-name="rectangle-47" width="52" height="41" transform="translate(-0.112 0.108)" fill="#f4f4f4"/>
+        <text id="_12th_Avenue-14" data-name="12th Avenue" transform="translate(25.888 24.108)" fill="#b1b2b2" font-size="8" font-family="ArialMT, Arial"><tspan x="-11.115" y="0">BOSE</tspan></text>
+      </g>
+      <g id="rectangle-50-2" data-name="rectangle-50" transform="translate(0 52.336)" fill="none" stroke="#d5d7d8" stroke-width="1">
+        <rect width="368" height="251" stroke="none"/>
+        <rect x="0.5" y="0.5" width="367" height="250" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

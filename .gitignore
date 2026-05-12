@@ -1,0 +1,44 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.claude/
+
+# Git / local env
+.env
+.env.*
+
+# Dependencies
+/vendor/
+
+# Runtime logs / cache
+/application/logs/*
+!/application/logs/index.html
+/application/cache/*
+!/application/cache/index.html
+
+# User uploads and generated assets
+/uploads/
+/downloads/
+/exports/
+/invoice-pdf/
+/po-pdf/
+/quotation-pdf/
+/barcodes/
+/home_image/
+/images/
+/img/
+/store_assets/
+
+# Backups / archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Temporary / exported office files
+*.xlsx
+*.csv
+*.tmp

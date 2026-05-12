@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Light.eot');
+    src: url('NowAlt-Light.eot?#iefix') format('embedded-opentype'),
+        url('NowAlt-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Bold.eot');
+    src: url('NowAlt-Bold.eot?#iefix') format('embedded-opentype'),
+        url('NowAlt-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Black.eot');
+    src: url('NowAlt-Black.eot?#iefix') format('embedded-opentype'),
+        url('NowAlt-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Medium.eot');
+    src: url('NowAlt-Medium.eot?#iefix') format('embedded-opentype'),
+        url('NowAlt-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Thin.eot');
+    src: url('NowAlt-Thin.eot?#iefix') format('embedded-opentype'),
+        url('NowAlt-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Black.eot');
+    src: url('Now-Black.eot?#iefix') format('embedded-opentype'),
+        url('Now-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Regular.eot');
+    src: url('NowAlt-Regular.eot?#iefix') format('embedded-opentype'),
+        url('NowAlt-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Bold.eot');
+    src: url('Now-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Now-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Medium.eot');
+    src: url('Now-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Now-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Thin.eot');
+    src: url('Now-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Now-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Regular.eot');
+    src: url('Now-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Now-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Light.eot');
+    src: url('Now-Light.eot?#iefix') format('embedded-opentype'),
+        url('Now-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-Medium.eot');
+    src: url('Rubik-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-Regular.eot');
+    src: url('Rubik-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-SemiBold.eot');
+    src: url('Rubik-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-Black.eot');
+    src: url('Rubik-Black.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-Light.eot');
+    src: url('Rubik-Light.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-LightItalic.eot');
+    src: url('Rubik-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-Bold.eot');
+    src: url('Rubik-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+

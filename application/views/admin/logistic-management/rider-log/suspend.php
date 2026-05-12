@@ -1,0 +1,399 @@
+<?php $this->load->view('admin/home/header'); ?>
+<style>
+	.dataTables_wrapper::-webkit-scrollbar {
+		display: none;
+	}
+
+	.nav-md .container.body .right_col {
+		padding: 10px 10px 0;
+		margin-left: 230px;
+	}
+	
+	.size-inner-section {
+		box-shadow: 0px 1px 4px #c5c5c5;
+		border-radius: 5px;
+		margin-bottom: 10px;
+	}
+	.suspend-row {
+		background-color: #ff373745;
+		color: #000;
+	}
+	
+	@media only screen and (max-width: 600px) {
+		.modal-dialog-aside{
+			width: 100% !important;
+			max-width: 100% !important;
+		}
+		.employee-detail{
+			display: block !important;
+		}
+		.employee-detail .image{
+			text-align: center;
+			margin-top: 10px;
+		}
+	}
+
+	.modal-dialog-aside {
+		width: 25%;
+		max-width: 80%;
+		height: 100%;
+		margin: 0;
+		transform: translate(0);
+		transition: transform .2s;
+	}
+
+	.modal-dialog-aside .modal-content {
+		height: inherit;
+		border: 0;
+		border-radius: 0;
+	}
+
+	.modal-dialog-aside .modal-content .modal-body {
+		overflow-y: auto
+	}
+
+	.modal.fixed-left .modal-dialog-aside {
+		margin-left: auto;
+		transform: translateX(100%);
+	}
+
+	.modal.fixed-right .modal-dialog-aside {
+		margin-right: auto;
+		transform: translateX(-100%);
+	}
+
+	.modal.show .modal-dialog-aside {
+		transform: translateX(0);
+	}
+</style>
+
+
+<!-- start page title -->
+<div class="page-title-box">
+	<div class="container-fluid">
+		<div class="row align-items-center">
+			<div class="col-sm-6">
+				<div class="page-title">
+					<h4>Logistic Management</h4>
+					<ol class="breadcrumb m-0">
+						<li class="breadcrumb-item"><a href="<?php echo base_url('admin'); ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?php echo base_url('admin/logistic-management/rider/list'); ?>">Riders</a></li>
+						<li class="breadcrumb-item active">Suspend Log</li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="float-end d-sm-block">
+					<div class="float-end d-sm-block">
+						<div class="btn-group ms-2 float-end">
+							<?php if(check_action_permission(get_user_role(), 'suspend_log', 'printMonthlySuspendLogs')):?>
+							<button class="btn btn-custom-white btn-sm" type="button" title="Print Suspended Report" data-bs-toggle="modal" data-bs-target="#filterModal">
+							<i class="fas fa-file-pdf"></i> Print Reports
+							</button>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+				<?php if ($this->admin->getInfo()) {
+					$info = explode("--", $this->admin->getInfo());
+					$info_type = $info[0];
+					$msg_data = $info[1];
+					if ($info_type == 1) {
+				?>
+					<div class="alert alert-success alert-dismissible fade show" style="position:fixed;z-index:99;right:20px;width:50%;top:90px;" role="alert">
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						<strong><?php echo $msg_data; ?></strong>
+					</div>
+
+				<?php } else { ?>
+					<div class="alert alert-danger alert-dismissible fade show" style="position:fixed;z-index:99;right:20px;width:50%;top:90px;" role="alert">
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						<strong><?php echo $msg_data; ?></strong>
+					</div>
+				<?php }
+				}
+				$this->admin->removeInfo();  ?>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end page title -->
+
+
+<div class="container-fluid">
+	<div class="page-content-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="header-title mb-0">Search</h4>
+					</div>
+					<div class="card-body">
+						<form action="<?php echo base_url('admin/logistic-management/rider/suspend-log'); ?>" method="get" id="filter_form">
+							<div class="row">
+								<div class="col-lg-4 col-md-4 col-sm-12">
+									<div class="form-group mb-2">
+										<label>Search by Employee Name or Employee No.</label>
+										<input type="search" id="keyword" name="keyword" placeholder="Search by Employee Name or Employee No." value="<?php echo $this->input->get('keyword') ? $this->input->get('keyword') : ''; ?>" autocomplete="off" class="form-control">
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-4 col-sm-12">
+									<div class="form-group mb-2">
+										<label>Platform</label>
+										<select name="platform" id="platform" class="form-select">
+											<option value="">[ANY]</option>
+											<?php foreach(fdCompanyHelper() as $fdcompany) { ?>
+												<option value="<?php echo $fdcompany->id; ?>" <?php echo ($fdcompany->id == $this->input->get('platform')) ? ' selected ' : '';?>><?php echo $fdcompany->company_name; ?></option>
+											<?php } ?>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-4 col-sm-12">
+									<div class="form-group mb-2">
+										<label>ID Type</label>
+										<select name="id_type" id="id_type" class="form-select">
+											<option value="">[ANY]</option>
+											<option value="Freelancer" <?php echo ($this->input->get('id_type') == 'Freelancer') ? ' selected ' : '';?>>Freelancer</option>
+											<option value="Company" <?php echo ($this->input->get('id_type') == 'Company') ? ' selected ' : '';?>>Company</option>
+										</select>
+									</div>
+								</div>
+								
+							</div>
+							<?php
+								$adv_show = false;
+								if(!empty($this->input->get('id_number'))){
+									$adv_show = true;
+								}
+								if(!empty($this->input->get('from'))){
+									$adv_show = true;
+								}
+								if(!empty($this->input->get('to'))){
+									$adv_show = true;
+								}
+							?>
+							<div class="collapse <?php if($adv_show){ echo ' show';}?>" id="advanceFilter">
+								<div class="row">
+									<div class="col-lg-4 col-md-4 col-sm-12">
+										<div class="form-group mb-2">
+											<label>ID Number</label>
+											<input type="search" id="id_number" name="id_number" placeholder="Search ID Number" value="<?php echo $this->input->get('id_number') ? $this->input->get('id_number') : ''; ?>" autocomplete="off" class="form-control">
+										</div>
+									</div>
+
+									<div class="col-lg-4 col-md-4 col-sm-12">
+										<div class="form-group mb-2">
+											<label>Suspend Between (From and To)</label>
+											<div class="input-daterange input-group" id="datepicker6" data-date-format="dd-m-yyyy" data-date-autoclose="true" data-provide="datepicker" data-date-container='#datepicker6'>
+												<input type="text" class="form-control" id="_from" name="from" value="<?php echo $this->input->get('from') ? $this->input->get('from') : ''; ?>" autocomplete="off" placeholder="Start Date" />
+												<input type="text" class="form-control" id="_to" name="to" value="<?php echo $this->input->get('to') ? $this->input->get('to') : ''; ?>" autocomplete="off" placeholder="End Date" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row mt-2">
+								<div class="col-lg-6 col-md-6 col-sm-12">
+									<button class="btn btn-outline-secondary waves-effect waves-light" type="button" data-bs-toggle="collapse" data-bs-target="#advanceFilter" aria-expanded="false" aria-controls="advanceFilter"><i class="fas fa-sliders-h"></i> Advance Search</button>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-12">
+									<button type="submit" class="btn btn-success btn-md float-end ms-2">Apply Filter</button>
+									<a href="<?php echo base_url('admin/logistic-management/rider/suspend-log'); ?>" class="btn btn-danger btn-md float-end">Reset Filter</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+						<table id="empTable" class="table table-bordered jambo_table bulk_action" style="width:100%">
+							<thead>
+								<tr>
+									<th>S.No.</th>
+									<th>Emp No.</th>
+									<th>Emp Name</th>
+									<th>ID Number</th>
+									<th>Platform</th>
+									<th>ID Type</th>
+									<th>Suspend Between</th>
+									<th>Suspend Interval</th>
+									<th>Status</th>
+									<th>Reason</th>
+									<th>Created At</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div> <!-- end col -->
+		</div> <!-- end row -->
+	</div>
+</div>
+<!-- container-fluid -->
+
+<div class="modal fade staticBackdrop fixed-left filterModal" id="filterModal" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="#filterModalLabel" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-aside">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title mt-0" id="filterModalLabel">Print Suspend Report</h5>
+				<button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form action="<?php echo base_url('admin/logistic-management/rider/print-suspend-report'); ?>" target="_blank" method="get" id="filterForm">
+					<div class="row">
+
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="form-group mb-3">
+								<label>Report Type <span class="text-danger">*</span></label>
+								<select name="report_type" id="report_type" class="form-select" required>
+									<option value="">[Select Report Type]</option>
+									<option value="daily">Daily Suspend Report</option>
+									<option value="monthly">Monthly Suspend Report</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="form-group mb-3">
+								<label>Search by Employee Name/Number</label>
+								<input type="search" id="keyword" name="keyword" placeholder="Search by Employee Name or Employee No." autocomplete="off" class="form-control">
+							</div>
+						</div>
+						
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="form-group mb-3">
+								<label>Platform</label>
+								<select name="platform" id="platform" class="form-select">
+									<option value="">[ANY]</option>
+									<?php foreach(fdCompanyHelper() as $fdcompany) { ?>
+										<option value="<?php echo $fdcompany->id; ?>"><?php echo $fdcompany->company_name; ?></option>
+									<?php } ?>
+								</select>
+							</div>
+						</div>
+						<div id="reportTypeOptions">
+
+						</div>
+
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="form-group mb-3">
+								<label>ID Type</label>
+								<select name="id_type" id="id_type" class="form-select">
+									<option value="">[ANY]</option>
+									<option value="Freelancer">Freelancer</option>
+									<option value="Company">Company</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="form-group mb-3">
+								<label>ID Number</label>
+								<input type="search" id="id_number" name="id_number" placeholder="Search ID Number" autocomplete="off" class="form-control">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" form="filterForm" class="btn btn-custom-success">Print Report</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<?php $this->load->view('admin/home/footer'); ?>
+<script>
+$(document).ready(function() {
+    $('#empTable').dataTable({
+        "lengthMenu": [[25, 50, 100, 500, 1000], [25, 50, 100, 500, 1000]],
+        dom: 'Blfrtip',
+        buttons: [
+            {
+                extend: "csv",
+                className: "btn-md"
+            },
+            {
+                extend: "excel",
+                className: "btn-md"
+            },
+            {
+                extend: "pdfHtml5",
+                className: "btn-md"
+            },
+            {
+                extend: "print",
+                className: "btn-md"
+            },
+        ],
+
+        "responsive": true,
+        "processing": true,
+        "serverSide": true,
+        "fixedHeader": true,
+        "searching": false,
+        "ajax": {
+            url: "<?php echo base_url();?>admin/logistic-management/rider/suspend-ajax-list?keyword=<?php echo $this->input->get('keyword')?>&id_type=<?php echo $this->input->get('id_type')?>&platform=<?php echo $this->input->get('platform')?>&id_number=<?php echo $this->input->get('id_number')?>&from=<?php echo $this->input->get('from')?>&to=<?php echo $this->input->get('to')?>",
+            type: "POST"
+        },
+        "columnDefs": [
+            {
+                "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                "orderable": false
+            },
+        ],
+        "createdRow": function(row, data, dataIndex) {
+            var statusHtml = data[8]; // The HTML containing the status
+
+            // Check if the status is 'Suspend'
+            if (statusHtml.includes('Suspend')) {
+                $(row).addClass('suspend-row');
+            }
+        }
+    });
+});
+
+$('#report_type').change(function(e) {
+	e.preventDefault();
+	var report_type = $(this).find('option:selected').val();
+	var reportTypeOptions = '';
+	var formAction;
+	if(report_type === "daily") {
+		formAction = "<?php echo base_url('admin/logistic-management/rider/print-daily-suspend-report'); ?>";
+		reportTypeOptions = `<div class="form-group col-lg-12 col-md-12 col-12 mb-3">
+								<label for="date_range">Select Date Range</label>
+								<div class="input-daterange input-group" id="datepicker6_unique" data-date-format="dd-m-yyyy" data-date-autoclose="true" data-provide="datepicker" data-date-container='#datepicker6_unique'>
+									<input type="text" class="form-control" name="from" autocomplete="off" placeholder="Start Date" />
+									<input type="text" class="form-control" name="to" autocomplete="off" placeholder="End Date" />
+								</div>
+							</div>`;
+		$('#reportTypeOptions').html(reportTypeOptions);
+		$('#datepicker6_unique').datepicker();
+	}else if(report_type === "monthly"){
+		formAction = "<?php echo base_url('admin/logistic-management/rider/print-suspend-report'); ?>";
+		reportTypeOptions = `<div class="form-group col-lg-12 col-md-12 col-12 mb-3">
+							<label for="date_range">Select Month <span class="text-danger">*</span></label>
+							<div class="position-relative" id="datepicker4">
+								<input type="text" class="form-control" data-date-container='#datepicker4' data-provide="datepicker"
+								data-date-format="MM yyyy" data-date-min-view-mode="1" name="month_of" id="month_of" autocomplete="off" required>
+							</div>
+						</div>`;
+		$('#reportTypeOptions').html(reportTypeOptions);
+	}else{
+		formAction = "<?php echo base_url('admin/logistic-management/rider/print-daily-suspend-report'); ?>";
+		toastr.error('Unsupported report type');
+	}
+	$('#filterForm').attr('action', formAction);
+});
+</script>
